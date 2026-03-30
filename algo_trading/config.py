@@ -38,17 +38,33 @@ TRADE_START      = "09:30"   # Look for breakout from here
 NO_NEW_TRADES    = "14:00"   # Do not enter new positions after this time
 SQUARE_OFF       = "15:10"   # Force-close ALL open positions at this time
 
-# ── Zerodha Kite API Credentials ─────────────────────────────────────────────
-# Get from: https://developers.kite.trade/
-# Steps: Login → My Apps → Create App → copy API key & secret
-API_KEY          = "your_api_key_here"
-API_SECRET       = "your_api_secret_here"
+# ── Broker Selection ──────────────────────────────────────────────────────────
+# Choose ONE broker: "angel", "dhan", or "upstox"
+BROKER = "angel"
 
-# Access token is generated fresh every day (see main.py for instructions)
-# You can also hardcode it here after generating it manually each morning
-ACCESS_TOKEN     = ""   # Leave empty to generate via login flow
+# ── Angel One (SmartAPI) ──────────────────────────────────────────────────────
+# Get from: https://smartapi.angelbroking.com → My Account → Enable API
+# TOTP key: AngelOne app → My Profile → Enable TOTP → copy the secret key
+ANGEL_API_KEY   = "your_angel_api_key"
+ANGEL_CLIENT_ID = "your_client_id"        # Your Angel One login ID (e.g. A123456)
+ANGEL_PASSWORD  = "your_login_password"
+ANGEL_TOTP_KEY  = "your_totp_secret_key"  # 32-char base32 key shown when you enable TOTP
+
+# ── Dhan ──────────────────────────────────────────────────────────────────────
+# Get from: https://dhanhq.co → API Portal → Create App
+# Token is valid for 30 days — no daily login needed
+DHAN_CLIENT_ID    = "your_dhan_client_id"
+DHAN_ACCESS_TOKEN = "your_dhan_access_token"
+
+# ── Upstox ────────────────────────────────────────────────────────────────────
+# Get from: https://developer.upstox.com → Create App
+# Run: python broker.py --login  each morning to get fresh access token
+UPSTOX_API_KEY      = "your_upstox_api_key"
+UPSTOX_API_SECRET   = "your_upstox_api_secret"
+UPSTOX_REDIRECT_URI = "http://127.0.0.1:8080/"
+UPSTOX_ACCESS_TOKEN = ""   # Filled after daily login
 
 # ── Logging ───────────────────────────────────────────────────────────────────
-LOG_FILE         = "trade_log.csv"   # Every trade is recorded here
-PAPER_TRADE      = True              # True = simulate orders, no real money
-                                     # Set to False ONLY when ready to go live
+LOG_FILE     = "trade_log.csv"   # Every trade is recorded here
+PAPER_TRADE  = True              # True = simulate orders, no real money
+                                 # Set to False ONLY when ready to go live

@@ -34,7 +34,7 @@ from datetime import datetime, date, time as dtime
 
 import config
 from strategy import NiftyORBStrategy, TradeState
-from broker_kite import get_broker
+from broker import get_broker
 
 # ── Logging Setup ─────────────────────────────────────────────────────────────
 logging.basicConfig(
