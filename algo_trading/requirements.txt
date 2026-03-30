@@ -1,0 +1,17 @@
+# Install ALL three, then use only the one matching your broker in config.py
+
+# Angel One
+smartapi-python
+pyotp
+websocket-client
+
+# Dhan
+dhanhq
+
+# Upstox
+upstox-python-sdk
+
+# Common
+pandas>=2.0.0
+numpy>=1.24.0
+requests>=2.28.0
